@@ -102,6 +102,7 @@ function signin() {
   document.getElementById("confirmPass").classList.add("hide");
   document.getElementById("signin-click").classList.add("hide");
   document.getElementById("signup-click").classList.remove("hide");
+  document.getElementById("btn1").textContent = "SignIn";
 }
 
 function signup() {
