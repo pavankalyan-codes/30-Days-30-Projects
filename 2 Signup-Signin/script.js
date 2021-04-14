@@ -39,7 +39,6 @@ function submitted(event) {
 }
 
 function validateTc() {
-  console.log(document.getElementById("tc").checked);
   if (document.getElementById("tc").checked) {
     document.getElementById("tclabel").classList.remove("is-invalid");
     return "yes";
@@ -96,7 +95,6 @@ function checkPassword() {
   }
 
   document.getElementById("password").classList.add("is-invalid");
-  console.log(document.getElementById("password"));
 }
 
 function signin() {
