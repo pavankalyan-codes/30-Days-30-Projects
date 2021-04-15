@@ -29,12 +29,12 @@ month_names_short: [
 
 async function fetchData(searchParameter) {
   let url =
-    "http://api.weatherapi.com/v1/search.json?key=6683827c15654ba2bdf154028211404&q=" +
+    "https://api.weatherapi.com/v1/search.json?key=6683827c15654ba2bdf154028211404&q=" +
     searchParameter;
   let response = await fetch(url);
 
   if (response.ok) {
-    // if HTTP-status is 200-299
+    // if https-status is 200-299
     // get the response body (the method explained below)
     let cities = await response.json();
     document.getElementById("search").style.borderRadius = "20px 20px 0px 0px";
@@ -69,7 +69,7 @@ async function fetchData(searchParameter) {
     document.getElementById("search").style.borderRadius =
       "20px 20px 20px 20px";
     document.getElementById("search-results").style.display = "none";
-    //alert("HTTP-Error: " + response.status);
+    //alert("https-Error: " + response.status);
     document.getElementById("content").classList.add("hide-this");
     return 0;
   }
@@ -95,7 +95,7 @@ async function selectCity(city) {
   document.getElementById("search").style.borderRadius = "20px 20px 20px 20px";
   document.getElementById("search-results").style.display = "none";
   let url =
-    "http://api.weatherapi.com/v1/current.json?key=6683827c15654ba2bdf154028211404&q=" +
+    "https://api.weatherapi.com/v1/current.json?key=6683827c15654ba2bdf154028211404&q=" +
     city +
     "&aqi=no";
   let response = await fetch(url);
