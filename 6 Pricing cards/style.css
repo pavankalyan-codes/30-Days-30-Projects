@@ -1,0 +1,50 @@
+.cards {
+  margin: auto;
+  justify-content: space-evenly;
+}
+.card-div {
+  border: 0px solid white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.6s;
+  cursor: pointer;
+  background: white;
+}
+
+body {
+  height: 100vh;
+  font-family: "Lexend", sans-serif !important;
+  background-color: #000000 !important;
+}
+.main {
+  height: 95%;
+}
+svg {
+  height: 100px;
+  width: 100%;
+}
+footer {
+  height: 5%;
+  color: white;
+}
+.svg1 {
+  padding: 30px;
+}
+.price {
+  font-size: xxx-large;
+}
+.micon {
+  color: #09d209;
+}
+.min-pad {
+  padding: 10px;
+}
+.myjumbo {
+  margin: 30px;
+  padding: 15px !important;
+}
+.make-big {
+  transform: scale(1.2);
+}
