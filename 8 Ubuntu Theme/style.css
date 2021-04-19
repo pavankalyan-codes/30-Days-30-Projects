@@ -1,0 +1,60 @@
+body {
+  background-image: url(ubuntu.jpeg);
+  background-size: cover;
+  height: 100vh;
+  font-family: "Ubuntu" !important;
+}
+.top-bar {
+  width: 100%;
+  height: 20px;
+  z-index: 2;
+  position: fixed;
+  background: #574d4deb;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  align-items: center;
+}
+.left-bar {
+  flex-direction: column;
+  height: 100vh;
+  width: 60px;
+  background: #2221216e;
+  z-index: 1;
+  position: fixed;
+  margin-top: 20px;
+  font-size: 50px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.rtop-icons {
+  width: 150px;
+  display: flex;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+
+.app-icon {
+  width: 40px;
+  height: 40px;
+  margin-top: 10px;
+}
+i {
+  font-size: smaller;
+}
+.dot {
+  height: 15px;
+  font-size: 40px;
+}
+.btm {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-bottom: 10px;
+  justify-content: flex-start;
+}
+.marg-btm {
+  margin-bottom: 30px;
+}
