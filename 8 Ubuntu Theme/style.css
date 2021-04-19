@@ -1,5 +1,5 @@
 body {
-  background-image: url(ubuntu.jpeg);
+  background-image: url("https://raw.githubusercontent.com/pavankalyan-codes/30-Days-30-Projects/master/8%20Ubuntu%20Theme/ubuntu.jpeg");
   background-size: cover;
   height: 100vh;
   font-family: "Ubuntu" !important;
