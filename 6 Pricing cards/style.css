@@ -11,6 +11,7 @@
   transition: transform 0.6s;
   cursor: pointer;
   background: white;
+  text-align: center;
 }
 
 body {
@@ -33,7 +34,7 @@ footer {
   margin-top: 10px;
 }
 .price {
-  font-size: xxx-large;
+  font-size: x-large;
 }
 .micon {
   color: #09d209;
@@ -54,6 +55,11 @@ footer {
   }
   .card-div {
     transition: transform 0.3s;
+  }
+}
+@media screen and (min-width: 900px) {
+  .card-div {
+    width: 250px !important;
   }
 }
 h4 {
