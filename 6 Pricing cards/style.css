@@ -22,7 +22,7 @@ body {
   height: 95%;
 }
 svg {
-  height: 100px;
+  height: 50px;
   width: 100%;
 }
 footer {
@@ -30,7 +30,7 @@ footer {
   color: white;
 }
 .svg1 {
-  padding: 30px;
+  margin-top: 10px;
 }
 .price {
   font-size: xxx-large;
@@ -47,4 +47,17 @@ footer {
 }
 .make-big {
   transform: scale(1.2);
+}
+@media screen and (max-height: 450px) {
+  .make-big {
+    transform: scale(1.03);
+  }
+  .card-div {
+    transition: transform 0.3s;
+  }
+}
+h4 {
+  color: white;
+  text-align: center;
+  font-size: xx-large;
 }
