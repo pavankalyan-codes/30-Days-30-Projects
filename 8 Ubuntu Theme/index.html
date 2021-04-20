@@ -129,7 +129,7 @@
       </div>
     </div>
     <div class="body">
-      <div id="mydiv">
+      <div id="mydiv" class="hide">
         <div id="mydivheader">
           <div class="win-icons">
             <i class="fas fa-times-circle ucolor"></i>
@@ -165,3 +165,32 @@
     </div>
   </body>
 </html>
+
+<div id="contextMenu" class="context-menu" style="display: none">
+  <div class="d-flex flex-column r-menu br-4">
+    <div class="hover-me d-flex col-12 pd-5 br-4">
+      <div class="col-1"></div>
+      <span class="col-11">New Folder</span>
+    </div>
+    <div class="hover-me d-flex col-12 pd-5">
+      <div class="col-1"></div>
+      <span class="col-11">New Document</span>
+    </div>
+    <hr class="" />
+    <div class="hover-me d-flex col-12 pd-5">
+      <div class="col-1"></div>
+      <span class="col-11">Open Terminal</span>
+    </div>
+    <hr class="" />
+    <div class="hover-me d-flex col-12 pd-5 br-4">
+      <label class="col-12 radio-inline font-small white-color">
+        <input class="col-1 fs-10" type="checkbox" checked />
+        <span class="col-11 va-bottom" id="tctext">Keep Aligned</span>
+      </label>
+    </div>
+    <div class="hover-me d-flex col-12 pd-5 br-4">
+      <div class="col-1"></div>
+      <span class="col-11">Change Desktop Background</span>
+    </div>
+  </div>
+</div>

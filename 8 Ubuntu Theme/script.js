@@ -1,8 +1,20 @@
 var isMaximize = false;
+const vw = Math.max(
+  document.documentElement.clientWidth || 0,
+  window.innerWidth || 0
+);
+const vh = Math.max(
+  document.documentElement.clientHeight || 0,
+  window.innerHeight || 0
+);
 window.addEventListener("load", function () {
+  console.log(vw + " " + vh);
+
   dragElement(document.getElementById("mydiv"));
   document.getElementById("myframe").allowTransparency = "false";
   var time = document.getElementById("time");
+
+  document.oncontextmenu = rightClick;
 
   setInterval(function () {
     let current = new Date().toString().split(" ");
@@ -87,3 +99,53 @@ const openApp = (app) => {
 const minimizeWindow = () => {
   document.getElementById("mydiv").style.display = "none";
 };
+
+function rightClick(clickEvent) {
+  clickEvent.preventDefault();
+  // console.log("listening" + clickEvent.toString);
+  // if (document.getElementById("contextMenu").style.display == "block")
+  //   hideMenu();
+  // else {
+  //   var menu = document.getElementById("contextMenu");
+
+  //   menu.style.display = "block";
+  //   menu.style.left = clickEvent.pageX + "px";
+  //   menu.style.top = clickEvent.pageY + "px";
+  //   console.log(clickEvent.pageX + " - " + clickEvent.pageY);
+  // }
+}
+
+function hideMenu() {
+  document.getElementById("contextMenu").style.display = "none";
+}
+document.addEventListener(
+  "contextmenu",
+  function (ev) {
+    ev.preventDefault();
+    console.log(ev.pageX + " - " + ev.pageY);
+    var menu = document.getElementById("contextMenu");
+
+    menu.style.display = "block";
+
+    if (ev.pageY > 450) {
+      if (ev.pageX > vh - 200) {
+        menu.style.left = ev.pageX - 200 + "px";
+      } else {
+        menu.style.left = ev.pageX + "px";
+      }
+
+      menu.style.top = ev.pageY - 184 + "px";
+    } else {
+      if (ev.pageX > vh - 200) {
+        menu.style.left = ev.pageX - 200 + "px";
+      } else {
+        menu.style.left = ev.pageX + "px";
+      }
+
+      menu.style.top = ev.pageY + "px";
+    }
+
+    return false;
+  },
+  false
+);
