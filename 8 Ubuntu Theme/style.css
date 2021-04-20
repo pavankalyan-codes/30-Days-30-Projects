@@ -58,3 +58,70 @@ i {
 .marg-btm {
   margin-bottom: 30px;
 }
+.body {
+  height: 100%;
+  /* width: 92%; */
+  /* margin-top: 20px; */
+  padding-top: 20px;
+  padding-left: 60px;
+}
+#mydiv {
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  /* width: 500px;
+  height: 500px; */
+  border-radius: 10px;
+  top: 5%;
+  left: 20%;
+}
+
+#mydivheader {
+  cursor: move;
+  z-index: 10;
+  background-color: #505355;
+  color: #ea8845;
+  display: flex;
+  border-radius: 5px 5px 0px 0px;
+}
+.win-icons {
+  width: 70px;
+  justify-content: space-around;
+  cursor: default;
+}
+iframe {
+  width: 500px;
+  height: 500px;
+  border-radius: 5px;
+}
+.search-bar {
+  background-color: #333333;
+}
+#search {
+  background-color: rgb(17, 17, 17);
+  outline: transparent;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding-left: 10px;
+  font-size: 14px;
+}
+.broswer-icons {
+  color: white;
+  font-size: 16px;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+}
+.pad5 {
+  padding: 5px;
+}
+.ucolor {
+}
+.app-icon::before {
+  content: "dddddddddd";
+  width: 1px;
+  height: 1px;
+}
