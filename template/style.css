@@ -1,0 +1,13 @@
+body {
+  height: 100vh;
+  width: 100%;
+}
+div {
+  margin: auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: -webkit-xxx-large;
+  font-weight: bolder;
+}

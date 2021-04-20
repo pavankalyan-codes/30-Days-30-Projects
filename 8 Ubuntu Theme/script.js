@@ -1,5 +1,7 @@
+var isMaximize = false;
 window.addEventListener("load", function () {
   dragElement(document.getElementById("mydiv"));
+  document.getElementById("myframe").allowTransparency = "false";
   var time = document.getElementById("time");
 
   setInterval(function () {
@@ -44,6 +46,11 @@ function dragElement(elmnt) {
     // set the element's new position:
     elmnt.style.top = elmnt.offsetTop - pos2 + "px";
     elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
+    if (elmnt.offsetLeft - pos1 < 60) {
+      document.getElementById("lbar").style.display = "none";
+    } else {
+      document.getElementById("lbar").style.display = "";
+    }
   }
 
   function closeDragElement() {
@@ -52,3 +59,31 @@ function dragElement(elmnt) {
     document.onmousemove = null;
   }
 }
+function makeFullScreen() {
+  if (isMaximize) {
+    minimize();
+    isMaximize = false;
+  } else {
+    document.getElementById("lbar").style.display = "none";
+    document.getElementById("mydiv").classList.add("make-fullscreen");
+    document.getElementById("myframe").classList.add("iframe-full");
+    isMaximize = true;
+  }
+}
+
+function minimize() {
+  document.getElementById("lbar").style.display = "";
+  document.getElementById("mydiv").classList.remove("make-fullscreen");
+  document.getElementById("myframe").classList.remove("iframe-full");
+}
+
+const openApp = (app) => {
+  console.log(app);
+  document.getElementById("sbar").classList.add("hide");
+  document.getElementById("myframe").src =
+    "https://github1s.com/pavankalyan-codes/30-Days-30-Projects";
+};
+
+const minimizeWindow = () => {
+  document.getElementById("mydiv").style.display = "none";
+};
