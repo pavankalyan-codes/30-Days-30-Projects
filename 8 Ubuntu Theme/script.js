@@ -10,20 +10,19 @@ const vh = Math.max(
 // document.getElementById("desktop").addEventListener(
 //   "mousedown",
 //   function (event) {
-//     console.log(event);
+
 //     if ((event.buttons & 3) === 3) {
 //       //Do something here
 //     }
 //   },
 //   true
 // );
-window.addEventListener("load", function() {
-    console.log(vw + " " + vh);
 
-    dragElement(document.getElementById("terminal"));
+window.onload = function() {
+    //dragElement(document.getElementById("terminal"));
     //dragElement(document.getElementById("mydiv1"));
 
-    document.getElementById("myframe").allowTransparency = "false";
+    //document.getElementById("myframe").allowTransparency = "false";
     var time = document.getElementById("time");
 
     document.oncontextmenu = rightClick;
@@ -39,7 +38,29 @@ window.addEventListener("load", function() {
             processCommand();
         }
     });
-});
+
+    document.getElementById("myrange").oninput = function() {
+        console.log("fuck off" + this.value);
+        var value = ((this.value - this.min) / (this.max - this.min)) * 100;
+        this.style.background =
+            "linear-gradient(to right, #2f5bee 0%, #2f5bee " +
+            value +
+            "%, #fff " +
+            value +
+            "%, white 100%)";
+    };
+
+    document.getElementById("myrange1").oninput = function() {
+        console.log("fuck off" + this.value);
+        var value = ((this.value - this.min) / (this.max - this.min)) * 100;
+        this.style.background =
+            "linear-gradient(to right, #2f5bee 0%, #2f5bee " +
+            value +
+            "%, #fff " +
+            value +
+            "%, white 100%)";
+    };
+};
 
 function dragElement(elmnt) {
     var pos1 = 0,
@@ -109,7 +130,6 @@ function minimize() {
 }
 
 const openApp = (app) => {
-    console.log(app);
     if (app === "chrome") {
         document.getElementById("sbar").classList.remove("hide");
         document.getElementById("myframe").src =
@@ -141,7 +161,7 @@ const maximizeWindow = () => {
 
 function rightClick(clickEvent) {
     clickEvent.preventDefault();
-    // console.log("listening" + clickEvent.toString);
+
     // if (document.getElementById("contextMenu").style.display == "block")
     //   hideMenu();
     // else {
@@ -150,7 +170,7 @@ function rightClick(clickEvent) {
     //   menu.style.display = "block";
     //   menu.style.left = clickEvent.pageX + "px";
     //   menu.style.top = clickEvent.pageY + "px";
-    //   console.log(clickEvent.pageX + " - " + clickEvent.pageY);
+
     // }
 }
 
@@ -159,6 +179,8 @@ function hideMenu() {
 }
 
 function leftClick() {
+    document.getElementById("rt-menu").classList.add("hide");
+    console.log("dfdf");
     hideMenu();
 }
 document.addEventListener(
@@ -167,15 +189,14 @@ document.addEventListener(
         if (ev.clientX < 60 || ev.clientY < 20) {
             return;
         }
-        console.log(ev);
+
         ev.preventDefault();
-        console.log(ev.pageX + " - " + ev.pageY);
+
         var menu = document.getElementById("contextMenu");
 
         menu.style.display = "block";
 
         if (ev.pageY > 450) {
-            console.log("im her babe" + vh);
             if (ev.pageX > vh - 200) {
                 menu.style.left = ev.pageX - 200 + "px";
             } else {
@@ -199,7 +220,7 @@ document.addEventListener(
 );
 
 function dashboardSearch() {
-    document.getElementById("overlay").classList.add("overlay");
+    //document.getElementById("overlay").classList.add("overlay");
 }
 
 function closeWindow() {
@@ -227,9 +248,9 @@ function processCommand() {
     let commandOutput =
         `
     <div class="d-flex"> 
-      <span class="terminal-text">PavanKalyan@Portfolio:~$</span><span class="white fw-normal ml2">` +
+      <span class="terminal-text">PavanKalyan@Portfolio:~$</span><input readonly class="trans-inp white fw-normal ml2" value=` +
         command +
-        `</span>
+        `></input>
     </div>
     <div class="d-flex white fw-normal">
       ` +
@@ -242,4 +263,13 @@ function processCommand() {
     document.getElementById("command").value = "";
     var bash = document.getElementById("bash");
     bash.scrollTop = bash.scrollHeight;
+}
+
+function newfolder() {
+    console.log("opening");
+}
+
+function openTopMenu() {
+    console.log("checking");
+    document.getElementById("rt-menu").classList.remove("hide");
 }
