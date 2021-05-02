@@ -1,151 +1,245 @@
 var isMaximize = false;
 const vw = Math.max(
-  document.documentElement.clientWidth || 0,
-  window.innerWidth || 0
+    document.documentElement.clientWidth || 0,
+    window.innerWidth || 0
 );
 const vh = Math.max(
-  document.documentElement.clientHeight || 0,
-  window.innerHeight || 0
+    document.documentElement.clientHeight || 0,
+    window.innerHeight || 0
 );
-window.addEventListener("load", function () {
-  console.log(vw + " " + vh);
+// document.getElementById("desktop").addEventListener(
+//   "mousedown",
+//   function (event) {
+//     console.log(event);
+//     if ((event.buttons & 3) === 3) {
+//       //Do something here
+//     }
+//   },
+//   true
+// );
+window.addEventListener("load", function() {
+    console.log(vw + " " + vh);
 
-  dragElement(document.getElementById("mydiv"));
-  document.getElementById("myframe").allowTransparency = "false";
-  var time = document.getElementById("time");
+    dragElement(document.getElementById("terminal"));
+    //dragElement(document.getElementById("mydiv1"));
 
-  document.oncontextmenu = rightClick;
+    document.getElementById("myframe").allowTransparency = "false";
+    var time = document.getElementById("time");
 
-  setInterval(function () {
-    let current = new Date().toString().split(" ");
-    time.textContent = current[0] =
-      " " + current[1] + " " + current[2] + " " + current[4];
-  }, 1000);
+    document.oncontextmenu = rightClick;
+
+    setInterval(function() {
+        let current = new Date().toString().split(" ");
+        time.textContent = current[0] =
+            " " + current[1] + " " + current[2] + " " + current[4];
+    }, 1000);
+
+    document.getElementById("command").addEventListener("keypress", function(e) {
+        if (e.key === "Enter") {
+            processCommand();
+        }
+    });
 });
 
 function dragElement(elmnt) {
-  var pos1 = 0,
-    pos2 = 0,
-    pos3 = 0,
-    pos4 = 0;
-  if (document.getElementById(elmnt.id + "header")) {
-    /* if present, the header is where you move the DIV from:*/
-    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-  } else {
-    /* otherwise, move the DIV from anywhere inside the DIV:*/
-    elmnt.onmousedown = dragMouseDown;
-  }
-
-  function dragMouseDown(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // get the mouse cursor position at startup:
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
-    document.onmousemove = elementDrag;
-  }
-
-  function elementDrag(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    // set the element's new position:
-    elmnt.style.top = elmnt.offsetTop - pos2 + "px";
-    elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
-    if (elmnt.offsetLeft - pos1 < 60) {
-      document.getElementById("lbar").style.display = "none";
+    var pos1 = 0,
+        pos2 = 0,
+        pos3 = 0,
+        pos4 = 0;
+    if (document.getElementById(elmnt.id + "header")) {
+        /* if present, the header is where you move the DIV from:*/
+        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
     } else {
-      document.getElementById("lbar").style.display = "";
+        /* otherwise, move the DIV from anywhere inside the DIV:*/
+        elmnt.onmousedown = dragMouseDown;
     }
-  }
 
-  function closeDragElement() {
-    /* stop moving when mouse button is released:*/
-    document.onmouseup = null;
-    document.onmousemove = null;
-  }
+    function dragMouseDown(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // get the mouse cursor position at startup:
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        // call a function whenever the cursor moves:
+        document.onmousemove = elementDrag;
+    }
+
+    function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // calculate the new cursor position:
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        // set the element's new position:
+        elmnt.style.top = elmnt.offsetTop - pos2 + "px";
+        elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
+        // if (elmnt.offsetLeft - pos1 < 60) {
+        //   document.getElementById("lbar").style.display = "none";
+        // } else {
+        //   document.getElementById("lbar").style.display = "";
+        // }
+    }
+
+    function closeDragElement() {
+        /* stop moving when mouse button is released:*/
+        document.onmouseup = null;
+        document.onmousemove = null;
+    }
 }
+
 function makeFullScreen() {
-  if (isMaximize) {
-    minimize();
-    isMaximize = false;
-  } else {
-    document.getElementById("lbar").style.display = "none";
-    document.getElementById("mydiv").classList.add("make-fullscreen");
-    document.getElementById("myframe").classList.add("iframe-full");
-    isMaximize = true;
-  }
+    if (isMaximize) {
+        minimize();
+        isMaximize = false;
+    } else {
+        document.getElementById("lbar").style.display = "none";
+        document.getElementById("mydiv").classList.add("make-fullscreen");
+        document.getElementById("myframe").classList.add("iframe-full");
+        isMaximize = true;
+    }
 }
 
 function minimize() {
-  document.getElementById("lbar").style.display = "";
-  document.getElementById("mydiv").classList.remove("make-fullscreen");
-  document.getElementById("myframe").classList.remove("iframe-full");
+    document.getElementById("lbar").style.display = "";
+    document.getElementById("mydiv").classList.remove("make-fullscreen");
+    document.getElementById("myframe").classList.remove("iframe-full");
 }
 
 const openApp = (app) => {
-  console.log(app);
-  document.getElementById("sbar").classList.add("hide");
-  document.getElementById("myframe").src =
-    "https://github1s.com/pavankalyan-codes/30-Days-30-Projects";
+    console.log(app);
+    if (app === "chrome") {
+        document.getElementById("sbar").classList.remove("hide");
+        document.getElementById("myframe").src =
+            "https://www.google.com/webhp?igu=1";
+        //document.getElementById("mydiv").classList.remove("hide");
+    } else {
+        document.getElementById("myframe").src = "";
+        document.getElementById("sbar").classList.add("hide");
+        if (app === "vscode") {
+            document.getElementById("myframe").src =
+                "https://github1s.com/pavankalyan-codes/30-Days-30-Projects";
+        }
+    }
+
+    maximizeWindow();
+
+    // document.getElementById("sbar").classList.add("hide");
+    // document.getElementById("myframe").src =
+    //   "https://github1s.com/pavankalyan-codes/30-Days-30-Projects";
 };
 
 const minimizeWindow = () => {
-  document.getElementById("mydiv").style.display = "none";
+    document.getElementById("mydiv").classList.add("hide");
+};
+
+const maximizeWindow = () => {
+    document.getElementById("mydiv").classList.remove("hide");
 };
 
 function rightClick(clickEvent) {
-  clickEvent.preventDefault();
-  // console.log("listening" + clickEvent.toString);
-  // if (document.getElementById("contextMenu").style.display == "block")
-  //   hideMenu();
-  // else {
-  //   var menu = document.getElementById("contextMenu");
+    clickEvent.preventDefault();
+    // console.log("listening" + clickEvent.toString);
+    // if (document.getElementById("contextMenu").style.display == "block")
+    //   hideMenu();
+    // else {
+    //   var menu = document.getElementById("contextMenu");
 
-  //   menu.style.display = "block";
-  //   menu.style.left = clickEvent.pageX + "px";
-  //   menu.style.top = clickEvent.pageY + "px";
-  //   console.log(clickEvent.pageX + " - " + clickEvent.pageY);
-  // }
+    //   menu.style.display = "block";
+    //   menu.style.left = clickEvent.pageX + "px";
+    //   menu.style.top = clickEvent.pageY + "px";
+    //   console.log(clickEvent.pageX + " - " + clickEvent.pageY);
+    // }
 }
 
 function hideMenu() {
-  document.getElementById("contextMenu").style.display = "none";
+    document.getElementById("contextMenu").style.display = "none";
+}
+
+function leftClick() {
+    hideMenu();
 }
 document.addEventListener(
-  "contextmenu",
-  function (ev) {
-    ev.preventDefault();
-    console.log(ev.pageX + " - " + ev.pageY);
-    var menu = document.getElementById("contextMenu");
+    "contextmenu",
+    function(ev) {
+        if (ev.clientX < 60 || ev.clientY < 20) {
+            return;
+        }
+        console.log(ev);
+        ev.preventDefault();
+        console.log(ev.pageX + " - " + ev.pageY);
+        var menu = document.getElementById("contextMenu");
 
-    menu.style.display = "block";
+        menu.style.display = "block";
 
-    if (ev.pageY > 450) {
-      if (ev.pageX > vh - 200) {
-        menu.style.left = ev.pageX - 200 + "px";
-      } else {
-        menu.style.left = ev.pageX + "px";
-      }
+        if (ev.pageY > 450) {
+            console.log("im her babe" + vh);
+            if (ev.pageX > vh - 200) {
+                menu.style.left = ev.pageX - 200 + "px";
+            } else {
+                menu.style.left = ev.pageX + "px";
+            }
 
-      menu.style.top = ev.pageY - 184 + "px";
-    } else {
-      if (ev.pageX > vh - 200) {
-        menu.style.left = ev.pageX - 200 + "px";
-      } else {
-        menu.style.left = ev.pageX + "px";
-      }
+            menu.style.top = ev.pageY - 190 + "px";
+        } else {
+            if (ev.pageX > vh - 200) {
+                menu.style.left = ev.pageX - 200 + "px";
+            } else {
+                menu.style.left = ev.pageX + "px";
+            }
 
-      menu.style.top = ev.pageY + "px";
-    }
+            menu.style.top = ev.pageY + "px";
+        }
 
-    return false;
-  },
-  false
+        return false;
+    },
+    false
 );
+
+function dashboardSearch() {
+    document.getElementById("overlay").classList.add("overlay");
+}
+
+function closeWindow() {
+    document.getElementById("mydiv").classList.add("hide");
+}
+
+function getBrowserSearchbar() {
+    return `<div id="sbar" class="hide">
+    <div class="search-bar d-flex col-12 pad5" >
+    <i class="fas fa-redo-alt broswer-icons col-1"></i>
+    <i class="fas fa-home broswer-icons col-1"></i>
+
+    <input
+      type="text"
+      id="search"
+      class="col-9"
+      value="www.google.com"
+    />
+    </div >
+  </div >`;
+}
+
+function processCommand() {
+    let command = document.getElementById("command").value;
+    let commandOutput =
+        `
+    <div class="d-flex"> 
+      <span class="terminal-text">PavanKalyan@Portfolio:~$</span><span class="white fw-normal ml2">` +
+        command +
+        `</span>
+    </div>
+    <div class="d-flex white fw-normal">
+      ` +
+        command +
+        `: command not found
+    </div>
+
+  `;
+    document.getElementById("cmdOutput").innerHTML += commandOutput;
+    document.getElementById("command").value = "";
+    var bash = document.getElementById("bash");
+    bash.scrollTop = bash.scrollHeight;
+}

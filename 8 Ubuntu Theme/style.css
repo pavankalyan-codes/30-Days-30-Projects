@@ -1,194 +1,316 @@
 body {
-  background-image: url("https://raw.githubusercontent.com/pavankalyan-codes/30-Days-30-Projects/master/8%20Ubuntu%20Theme/ubuntu.jpeg");
-  background-size: cover;
-  height: 100vh;
-  font-family: "Ubuntu" !important;
+    background-image: url("ubuntu.jpeg");
+    background-size: cover;
+    height: 100vh;
+    font-family: "Ubuntu" !important;
 }
+
 .top-bar {
-  width: 100%;
-  height: 20px;
-  z-index: 2;
-  position: fixed;
-  background: #2a2828eb;
-  display: flex;
-  justify-content: space-between;
-  color: white;
-  align-items: center;
+    width: 100%;
+    height: 20px;
+    z-index: 2;
+    position: fixed;
+    background: #2a2828a1;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    align-items: center;
 }
+
 .left-bar {
-  flex-direction: column;
-  height: 100vh;
-  width: 60px;
-  background: #2221216e;
-  z-index: 1;
-  position: fixed;
-  margin-top: 20px;
-  font-size: 50px;
-  color: white;
-  display: flex;
-  justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+    width: 60px;
+    background: #2221216e;
+    z-index: 1;
+    position: fixed;
+    margin-top: 20px;
+    font-size: 50px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
 }
+
 .rtop-icons {
-  width: 150px;
-  display: flex;
-  justify-content: space-evenly;
-  cursor: pointer;
+    width: 150px;
+    display: flex;
+    justify-content: space-evenly;
+    cursor: pointer;
 }
 
 .app-icon {
-  width: 40px;
-  height: 40px;
-  margin-top: 10px;
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
 }
+
 i {
-  font-size: smaller;
+    font-size: smaller;
 }
+
 .dot {
-  height: 5px;
-  width: 5px;
-  background-color: white;
-  border-radius: 10px;
+    height: 5px;
+    width: 5px;
+    background-color: white;
+    border-radius: 100%;
 }
+
 .btm {
-  height: 100%;
-  margin-bottom: 10px;
+    height: 100%;
+    margin-bottom: 10px;
 }
+
 .marg-btm {
-  margin-bottom: 30px;
-  height: 40px;
+    margin-bottom: 30px;
+    height: 40px;
 }
+
 .body {
-  height: 100%;
-  width: 100%;
-  /* margin-top: 20px; */
-  padding-top: 20px;
-  padding-left: 60px;
-  position: fixed;
+    height: 100%;
+    width: 100%;
+    /* margin-top: 20px; */
+    padding-top: 20px;
+    padding-left: 60px;
+    position: fixed;
 }
+
 #mydiv {
-  position: absolute;
-  z-index: 9;
-  text-align: center;
-  /* width: 500px;
+    position: absolute;
+    z-index: 9;
+    text-align: center;
+    /* width: 500px;
   height: 500px; */
-  border-radius: 10px;
-  top: 5%;
-  left: 20%;
+    border-radius: 10px;
+    top: 5%;
+    left: 20%;
+}
+
+#mydiv1 {
+    position: absolute;
+    z-index: 8;
+    text-align: center;
+    /* width: 500px;
+  height: 500px; */
+    border-radius: 10px;
+    top: 5%;
+    left: 20%;
+}
+
+#terminal {
+    position: absolute;
+    z-index: 7;
+    text-align: center;
+    /* width: 500px;
+  height: 500px; */
+    border-radius: 10px;
+    top: 5%;
+    left: 20%;
+    width: 500px;
+    height: 500px;
 }
 
 #mydivheader {
-  cursor: move;
-  z-index: 10;
-  background-color: #505355;
-  color: #ea8845;
-  display: flex;
-  border-radius: 5px 5px 0px 0px;
+    cursor: move;
+    z-index: 10;
+    background-color: #505355;
+    color: #ea8845;
+    display: flex;
+    border-radius: 5px 5px 0px 0px;
 }
+
 .win-icons {
-  width: 70px;
-  justify-content: space-around;
-  cursor: default;
+    width: 70px;
+    justify-content: space-around;
+    cursor: default;
 }
+
 iframe {
-  width: 500px;
-  height: 503px;
-  border-radius: 0px 0px 5px 5px;
-  margin-bottom: -10px;
+    width: 500px;
+    height: 503px;
+    border-radius: 0px 0px 5px 5px;
+    margin-bottom: -10px;
 }
+
 .search-bar {
-  background-color: #333333;
+    background-color: #333333;
 }
+
 #search {
-  background-color: rgb(17, 17, 17);
-  outline: transparent;
-  color: white;
-  border: none;
-  border-radius: 15px;
-  padding-left: 10px;
-  font-size: 14px;
+    background-color: rgb(17, 17, 17);
+    outline: transparent;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding-left: 10px;
+    font-size: 14px;
 }
+
 .broswer-icons {
-  color: white;
-  font-size: 16px;
-  display: flex !important;
-  flex-direction: column;
-  justify-content: center;
-  cursor: pointer;
+    color: white;
+    font-size: 16px;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
 }
+
 .pad5 {
-  padding: 5px;
+    padding: 5px;
 }
+
 .whitecolor {
-  background-color: white;
+    background-color: white;
+}
+
+.ubuntu-color {
+    background-color: #2d091f;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 14px;
 }
 
 .make-fullscreen {
-  width: 100%;
-  bottom: 20px;
-  top: 20px !important;
-  left: 0px !important;
+    width: 100%;
+    bottom: 20px;
+    top: 20px !important;
+    left: 0px !important;
 }
 
 .iframe-full {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .hide {
-  display: none !important;
+    display: none !important;
 }
+
+.fw-normal {
+    font-weight: 200;
+}
+
+.white {
+    color: white;
+}
+
 .circle {
-  width: 5px;
-  height: 5px;
-  background: white;
-  align-self: center;
-  margin-top: 10px;
-  border-radius: 10px;
+    width: 5px;
+    height: 5px;
+    background: white;
+    align-self: center;
+    margin-top: 10px;
+    border-radius: 10px;
 }
+
 .space-even {
-  justify-content: space-evenly;
+    justify-content: space-evenly;
 }
+
 .transparent {
-  background-color: transparent;
+    background-color: transparent;
 }
+
 .space-around {
-  justify-content: space-around;
+    justify-content: space-around;
 }
+
 .dots {
-  width: 40px;
+    width: 40px;
 }
+
 .context-menu {
-  display: block;
-  width: 200px;
-  position: absolute;
-  top: 100px;
-  left: 100px;
-  background: #534d4d;
-  border-radius: 4px;
-  color: white;
+    display: block;
+    width: 200px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    background: #534d4d;
+    border-radius: 4px;
+    color: white;
 }
+
 .r-menu {
-  font-size: small;
+    font-size: small;
 }
+
 .mgr-10 {
-  margin-right: 10px;
+    margin-right: 10px;
 }
+
 .pd-5 {
-  padding: 5px;
+    padding: 5px;
 }
+
 .hover-me:hover {
-  background-color: #3333f8c4;
-  cursor: pointer;
+    background-color: #3333f8c4;
+    cursor: pointer;
 }
+
 hr {
-  margin: 10px !important;
+    margin: 10px !important;
 }
+
 .br-4 {
-  border-radius: 4px;
+    border-radius: 4px;
 }
+
 .fs-10 {
-  font-size: 10px;
+    font-size: 10px;
 }
+
 .va-bottom {
-  vertical-align: text-bottom;
+    vertical-align: text-bottom;
+}
+
+.overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 99;
+    backdrop-filter: blur(2px);
+}
+
+.terminal-text {
+    color: green;
+}
+
+#command {
+    width: -webkit-fill-available;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    color: white;
+    margin-left: 2px;
+    outline: none;
+}
+
+.ml2 {
+    margin-left: 2px;
+}
+
+.of-auto {
+    overflow: auto;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgb(255, 255, 255);
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: rgba(204, 204, 204, 1);
+    -webkit-box-shadow: inset 0 0 6px rgba(204, 204, 204, 1);
 }
