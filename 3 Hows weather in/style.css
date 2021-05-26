@@ -201,6 +201,10 @@ hr {
     height: 100%;
 }
 
+#city-card {
+    border-radius: 10px 0px 0px 10px;
+}
+
 @media only screen and (max-width: 620px) {
     .result-card {
         width: 100%;
