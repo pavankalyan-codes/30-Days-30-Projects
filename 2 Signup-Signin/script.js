@@ -70,7 +70,7 @@ function validateCPassword() {
   }
 }
 
-function checkCPassword() {}
+function checkCPassword() { }
 
 function checkEmail() {
   let mail = document.getElementById("email").value;
@@ -103,6 +103,7 @@ function signin() {
   document.getElementById("signin-click").classList.add("hide");
   document.getElementById("signup-click").classList.remove("hide");
   document.getElementById("btn1").textContent = "SignIn";
+  makeInputsValid();
 }
 
 function signup() {
@@ -111,6 +112,7 @@ function signup() {
   document.getElementById("confirmPass").classList.remove("hide");
   document.getElementById("signup-click").classList.add("hide");
   document.getElementById("signin-click").classList.remove("hide");
+  makeInputsValid();
 }
 
 function listenSignup() {
@@ -119,4 +121,17 @@ function listenSignup() {
 
 function listenSignin() {
   alert("signin successfull");
+}
+
+function makeInputsValid() {
+  var el = document.getElementsByTagName("input");
+  for (let i = 0; i < el.length; i++) {
+    if (el[i].classList.contains("is-invalid")) {
+      el[i].classList.remove("is-invalid");
+    }
+  }
+  let chkbox = document.getElementById("tclabel");
+  if (chkbox.classList.contains("is-invalid")) {
+    chkbox.classList.remove("is-invalid");
+  }
 }

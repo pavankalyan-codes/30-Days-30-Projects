@@ -1,25 +1,18 @@
+button{
+  background: black !important;
+  border: none !important;
+  border-radius:0px !important; 
+}
+
 .login-signup {
   margin: auto;
-  width: 260px;
   height: 100vh;
 }
 body {
   color: white;
   font-family: "Lexend", sans-serif !important;
   height: 100vh;
-  background: #0f0c29; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #24243e,
-    #302b63,
-    #0f0c29
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #24243e,
-    #302b63,
-    #0f0c29
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
 }
 h4 {
   text-align: center;
@@ -48,28 +41,18 @@ h4 {
 }
 .headbar {
   height: 50px;
-  background: #108dc7; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #ef8e38,
-    #108dc7
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #ef8e38,
-    #108dc7
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: black;
 
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px 10px 0px 0px;
 }
 .content {
   border: 0px solid white;
-  border-radius: 10px;
   box-shadow: 0px 0px 18px 0px #bababc;
+  height: 400px;
+  width: 300px;
 }
 .dummy {
 }
@@ -77,7 +60,6 @@ h4 {
   padding: 20px;
 }
 .makeround {
-  border-radius: 40px !important;
 }
 .myBtn {
   width: 100px;
@@ -92,7 +74,7 @@ h4 {
 .main-div {
   display: flex;
   flex-direction: column;
-  /* margin: auto; */
+  height:80%;
   align-items: center;
   justify-content: center;
 }
