@@ -19,10 +19,17 @@ window.addEventListener("load", function () {
   });
 });
 function select(opt) {
-  document.getElementById("opt1").style.width = pollResult[0] + "%";
-  document.getElementById("opt2").style.width = pollResult[1] + "%";
-  document.getElementById("opt3").style.width = pollResult[2] + "%";
-  document.getElementById("opt4").style.width = pollResult[3] + "%";
+  let max=Math.max(...pollResult);
+  console.log(max);
+
+  let index=pollResult.indexOf(max);
+  pollResult.forEach((el,ind)=>{
+    if(ind!=index){
+      document.getElementById("opt"+(ind+1)).style.width=el + "%";
+    }
+  })
+  document.getElementById("opt"+(index+1)).classList.add("max-opted");
+  document.getElementById("opt"+(index+1)).style.width=pollResult[index]+"%";
 
   for (let i = 0; i < 4; i++) {
     document.getElementsByClassName("card")[i].classList.remove("myhover");

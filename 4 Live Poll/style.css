@@ -68,3 +68,6 @@ body {
 .question {
   text-align: center;
 }
+.max-opted {
+  background: linear-gradient(to right, #92ff77, #6fe029) !important;
+}
