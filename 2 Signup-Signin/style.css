@@ -1,18 +1,18 @@
-button{
+button {
   background: black !important;
   border: none !important;
-  border-radius:0px !important; 
+  border-radius: 0px !important;
 }
 
 .login-signup {
   margin: auto;
-
 }
 body {
   color: white;
   font-family: "Lexend", sans-serif !important;
-
-  
+  height: max(500px, 100vh);
+  display: flex;
+  justify-content: center;
 }
 h4 {
   text-align: center;
@@ -74,7 +74,7 @@ h4 {
 .main-div {
   display: flex;
   flex-direction: column;
-  height:80%;
+  height: 80%;
   align-items: center;
   justify-content: center;
 }
